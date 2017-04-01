@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/poster_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="240dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/poster_land" />
+
+    <ImageView
+        android:id="@+id/movie_poster"
+        android:layout_width="100dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="208dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/poster" />
+
+    <TextView
+        android:id="@+id/movie_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/poster_image"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/movie_poster"
+        android:text="Интерстеллар"
+        android:textSize="22dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/movie_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/movie_poster"
+        android:layout_alignStart="@+id/movie_name"
+        android:layout_marginRight="8dp"
+        android:text="2014"
+        android:textSize="18dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/movie_date"
+        android:layout_toRightOf="@id/movie_date"
+        android:text="12+"
+        android:textSize="18dp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_below="@id/poster_image"/>
+
+
+</RelativeLayout>
