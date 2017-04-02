@@ -16,7 +16,7 @@ class PostersAdapter : RecyclerView.Adapter<PostersAdapter.PosterHolder>() {
 
     override fun onBindViewHolder(holder: PosterHolder, position: Int) {
         val item = data[position]
-        holder.image.load(item.image)
+        holder.image.load(item.image!!)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PosterHolder {
@@ -31,6 +31,6 @@ class PostersAdapter : RecyclerView.Adapter<PostersAdapter.PosterHolder>() {
     class PosterHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val image = itemView.findView<ImageView>(R.id.poster_image)
     }
-
-
 }
+
+

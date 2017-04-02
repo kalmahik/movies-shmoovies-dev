@@ -1,6 +1,26 @@
 <resources>
     <string name="app_name">Movies-Shmoovies</string>
+    <string name="movie_detail">Movie details</string>
     <string name="posters_title_movies">Movies</string>
     <string name="posters_title_tv_shows">Tv shows</string>
     <string name="posters_title_peoples">Peoples</string>
+
+    <string name="movie_overview">Overview</string>
+    <string name="movie_crew">Featured Crew</string>
+    <string name="movie_cast">Top Billed Cast</string>
+
+    <string name="user_score_title">User Score</string>
+    <string name="movie_data_title">Movie Data</string>
+    <string name="movie_status_title">Status: </string>
+    <string name="movie_release_date_title">Release Date: </string>
+    <string name="movie_url_title">Home page: </string>
+    <string name="movie_runtime_title">Runtime: </string>
+    <string name="movie_genres_title">Genres: </string>
+    <string name="movie_budget_title">Budget:</string>
+    <string name="movie_revenue_title">Revenue: </string>
+    <string name="movie_currency_format">%s $</string>
+    <string name="movie_runtime_format">%s min</string>
+    <string name="movie_date_and_pg_digits_format" formatted="false">%s • %s+</string>
+    <string name="movie_date_and_pg_chars_format" formatted="false">%s • %s</string>
+
 </resources>

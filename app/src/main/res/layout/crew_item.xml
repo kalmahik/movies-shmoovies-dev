@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingRight="@dimen/activity_horizontal_margin">
+
+    <TextView
+        android:id="@+id/crew_member_name"
+        style="@style/TextStyle.DarkGray.SubTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="center|left"
+        android:lines="2"
+        android:maxLines="2"
+        android:maxWidth="140dp"
+        tools:text="Name" />
+
+    <TextView
+        android:id="@+id/crew_member_job"
+        style="@style/TextStyle.Gray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:maxLines="2"
+        android:ellipsize="end"
+        tools:text="Job" />
+</LinearLayout>

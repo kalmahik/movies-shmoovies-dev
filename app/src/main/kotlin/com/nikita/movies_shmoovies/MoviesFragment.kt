@@ -1,15 +1,12 @@
 package com.nikita.movies_shmoovies.movies
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v4.app.Fragment
 import android.support.v4.view.ViewPager
 import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import com.nikita.movies_shmoovies.MovieActivity
 import com.nikita.movies_shmoovies.MoviesAdapter
 import com.nikita.movies_shmoovies.R
 import com.nikita.movies_shmoovies.common.utils.findView
@@ -29,3 +26,5 @@ class MoviesFragment : Fragment() {
     }
 
 }
+
+

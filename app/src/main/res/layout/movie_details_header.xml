@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_header"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black_60"
+    android:paddingBottom="24dp">
+
+    <ImageView
+        android:id="@+id/movie_detail_backdrop"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/back_drop_poster_height"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimary"
+        android:scaleType="centerCrop" />
+
+    <ImageView
+        android:id="@+id/movie_poster"
+        android:layout_width="@dimen/poster_width"
+        android:layout_height="@dimen/poster_height"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="96dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/movie_title"
+        style="@style/TextStyle.White"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/movie_detail_backdrop"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_half_vertical_margin"
+        android:layout_toEndOf="@id/movie_poster"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:text="Интерстеллар" />
+
+    <TextView
+        android:id="@+id/movie_release_date"
+        style="@style/TextStyle.Gray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/movie_title"
+        android:layout_below="@id/movie_title"
+        android:layout_marginTop="@dimen/activity_half_vertical_margin"
+        tools:text="2017" />
+
+    <com.nikita.movies_shmoovies.common.widgets.CircleDisplay
+        android:id="@+id/movie_user_score"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/movie_poster"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:visibility="invisible"
+        android:layout_alignEnd="@+id/movie_poster"
+        android:layout_alignStart="@+id/movie_poster" />
+
+    <TextView
+        android:id="@+id/movie_user_score_title"
+        style="@style/TextStyle.White"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/user_score_title"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_alignTop="@+id/movie_user_score"
+        android:layout_alignStart="@+id/movie_release_date"
+        android:layout_marginTop="10dp" />
+
+</RelativeLayout>

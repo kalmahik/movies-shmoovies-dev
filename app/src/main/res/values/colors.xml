@@ -4,7 +4,22 @@
     <color name="colorPrimaryDark">#04171e</color>
     <color name="colorAccent">#00d373</color>
     <color name="windowBackground">#212121</color>
+    <color name="genreBackground">#530202</color>
 
     <color name="black_60">#99000000</color>
+
+    <color name="movie_detail_header_bg">@color/colorPrimaryDark</color>
+    <color name="title_text_white_color">#ffffff</color>
+    <color name="title_text_black_color">#000000</color>
+    <color name="subtitle_text_color">#546d74</color>
+    <color name="body_text_color">#c7c7c7</color>
+
+    <!--<color name="mis_gardient_start">#515d61</color>-->
+    <!--<color name="mis_gardient_end">#081c24</color>-->
+    <!--<color name="mis_crew_text">#546d74</color>-->
+
+    <!--<color name="mis_about_bg">#ffffff</color>-->
+
+    <!--<color name="mis_about_text">#1b1b1b</color>-->
 
 </resources>

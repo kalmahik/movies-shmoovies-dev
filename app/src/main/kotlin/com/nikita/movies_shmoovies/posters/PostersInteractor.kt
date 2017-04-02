@@ -1,33 +1,52 @@
 package com.nikita.movies_shmoovies.posters
 
-import com.nikita.movies_shmoovies.common.network.Movie
 import com.nikita.movies_shmoovies.common.network.MoviesService
 
 interface PostersInteractor {
-    fun getMoviesUpcoming(): PostersPM
-    fun getMoviesPopular(): PostersPM
+    fun getMoviesUpcoming(pagination: Boolean = false): PostersPM
+    fun getMoviesPopular(pagination: Boolean = false): PostersPM
     fun getMoviesTopRated(): PostersPM
     fun getTvShows(): PostersPM
     fun getPeople(): PostersPM
-    fun getMovieDetails(): List<Movie>
+    //fun getMovieDetails(): List<Movie>
+    fun cleanUpcoming()
+
+    fun cleanPopular()
+
 }
 
 data class PostersPM(val posters: List<Poster>) {
     data class Poster(val id: String,
                       val title: String,
-                      val image: String)
+                      val image: String?)
 }
 
 class BasePostersInteractor(val moviesService: MoviesService) : PostersInteractor {
-    override fun getMoviesUpcoming(): PostersPM {
-        val posters = moviesService.getUpcoming().results
+    var upcomingCount: Int = 1
+    var popularCount: Int = 1
+
+    override fun cleanUpcoming() {
+        upcomingCount = 1
+    }
+
+    override fun cleanPopular() {
+        popularCount = 1
+    }
+
+    override fun getMoviesUpcoming(pagination: Boolean): PostersPM {
+        val posters = moviesService.getUpcoming(upcomingCount).results
                 .map { PostersPM.Poster(it.id, it.title, it.poster_path) }
+        if (pagination) upcomingCount++ else
+            if (!pagination && upcomingCount == 1) upcomingCount++ else upcomingCount = 1
         return PostersPM(posters)
     }
 
-    override fun getMoviesPopular(): PostersPM {
-        val posters = moviesService.getPopular().results
+    override fun getMoviesPopular(pagination: Boolean): PostersPM {
+        val posters = moviesService.getPopular(popularCount).results
                 .map { PostersPM.Poster(it.id, it.title, it.poster_path) }
+
+        if (pagination) popularCount++ else
+            if (!pagination && popularCount == 1) popularCount++ else popularCount = 1
         return PostersPM(posters)
     }
 
@@ -36,17 +55,6 @@ class BasePostersInteractor(val moviesService: MoviesService) : PostersInteracto
                 .map { PostersPM.Poster(it.id, it.title, it.poster_path) }
         return PostersPM(posters)
     }
-
-    override fun getMovieDetails(): List<Movie> {
-        val movie = moviesService.getDetails().results
-                .map {
-                    Movie(it.id, it.title, it.poster_path,
-                            it.release_date, it.status, it.original_language,
-                            it.runtime, it.budget, it.revenue, it.homepage)
-                }
-        return movie
-    }
-
 
     override fun getTvShows(): PostersPM {
         return createFakePosters("Shows")

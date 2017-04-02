@@ -24,7 +24,7 @@ class BaseLceBehavior(propertyBinder: PropertyBinder) : LceBehavior {
   private var refreshView by bindPropertyOpt<SwipeRefreshLayout>(propertyBinder)
 
   override fun init(rootView: ViewGroup) {
-    contentView = rootView.findView(R.id.recycler_view)
+    contentView = rootView.findView(R.id.content_view)
     progressBar = rootView.context.layoutInflater.inflate(R.layout.layout_progress, rootView, false)
     errorView = rootView.context.layoutInflater.inflate(R.layout.layout_error, rootView, false) as ErrorView
     refreshView = rootView.findViewOptional(R.id.refresh_view)
@@ -48,7 +48,6 @@ class BaseLceBehavior(propertyBinder: PropertyBinder) : LceBehavior {
         contentView = contentView,
         errorView = errorView)
     }
-
     // otherwise the pull to refresh widget will already display a loading animation
   }
 

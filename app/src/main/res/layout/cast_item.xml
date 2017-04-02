@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/activity_half_vertical_margin"
+    android:orientation="vertical"
+    android:paddingRight="@dimen/activity_horizontal_margin">
+
+    <FrameLayout
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:background="@drawable/actor_background_shape"
+        android:padding="2dp">
+
+        <ImageView
+            android:id="@+id/actor_photo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/actor_name"
+        style="@style/TextStyle.DarkGray.SubTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxWidth="140dp"
+        android:gravity="center|left"
+        android:lines="2"
+        android:maxLines="2"
+        tools:text="Actor Name" />
+
+    <TextView
+        android:id="@+id/actor_character"
+        style="@style/TextStyle.Gray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxWidth="140dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        tools:text="Role" />
+
+</LinearLayout>

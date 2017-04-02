@@ -12,7 +12,6 @@ class MainActivity : AppCompatActivity() {
 
     when (item.itemId) {
       R.id.navigation_movies -> {
-        //showPostersFragment(PostersFragment.Type.Movies)
         showMoviesFragment()
         true
       }
@@ -37,7 +36,6 @@ class MainActivity : AppCompatActivity() {
     // TODO Лень обходить баг с запоминанием выбранной вкладки
     navigation.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
     if (savedInstanceState == null) {
-      //showPostersFragment(PostersFragment.Type.MoviesUpcoming)
       showMoviesFragment()
     }
 
